@@ -6,7 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FirstexerciseApplication  implements CommandLineRunner {
+public class FirstexerciseApplication implements CommandLineRunner {
 
     private final FindSecondMostCommonService findSecondMostCommonService;
 
@@ -21,14 +21,14 @@ public class FirstexerciseApplication  implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        int[] vetor1 = {0, 1, 2, 5, 7, 4, 2, 9, 1, 2};
-        int[] vetor2 = {0, 1, 2, 5, 7, 4, 2, 9, 1};
-        int[] vetor3 = {3, 3, 2, 2};
-        int[] vetor4 = {3, 3, 3, 3};
+        int[] vector1 = {0, 1, 2, 5, 7, 4, 2, 9, 1, 2};
+        int[] vector2 = {0, 1, 2, 5, 7, 4, 2, 9, 1};
+        int[] vector3 = {3, 3, 2, 2};
+        int[] vector4 = {3, 3, 3, 3};
 
-        System.out.println("Resultado 1: " + findSecondMostCommonService.findSecondMostCommon(vetor1));
-        System.out.println("Resultado 2: " + findSecondMostCommonService.findSecondMostCommon(vetor2));
-        System.out.println("Resultado 3: " + findSecondMostCommonService.findSecondMostCommon(vetor3));
-        System.out.println("Resultado 4: " + findSecondMostCommonService.findSecondMostCommon(vetor4));
+        System.out.println("Result 1: " + findSecondMostCommonService.findSecondMostCommon(vector1));
+        System.out.println("Result 2: " + findSecondMostCommonService.findSecondMostCommon(vector2));
+        System.out.println("Result 3: " + findSecondMostCommonService.findSecondMostCommon(vector3));
+        System.out.println("Result 4: " + findSecondMostCommonService.findSecondMostCommon(vector4));
     }
 }
