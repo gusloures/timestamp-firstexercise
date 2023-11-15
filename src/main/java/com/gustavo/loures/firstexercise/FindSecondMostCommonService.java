@@ -29,13 +29,9 @@ public class FindSecondMostCommonService {
                 .max(Map.Entry.comparingByValue())
                 .orElse(null);
 
-        // If there is only one number or no second number, return that first number
-        // Or if there is no number return -1
-        // Or if there is no second number because the first and the second are equal, return the first
-        if (mostCommonEntry == null || frequencyMap.size() <= 1 || secondMostCommonEntry == null) {
+        // If there is no number return -1 or if there is only one number or no second number, return that first number most common
+        if (mostCommonEntry == null || frequencyMap.size() <= 1 || secondMostCommonEntry == null || mostCommonEntry.getValue().equals(secondMostCommonEntry.getValue())) {
             return mostCommonEntry != null ? mostCommonEntry.getKey() : -1;
-        } else if (mostCommonEntry.getValue().equals(secondMostCommonEntry.getValue())) {
-            return mostCommonEntry.getKey();
         }
 
         // Returns the second most common
