@@ -1,16 +1,19 @@
 package com.gustavo.loures.firstexercise;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.Arrays;
+import java.util.Scanner;
+
 @SpringBootApplication
+@Slf4j
 public class FirstexerciseApplication implements CommandLineRunner {
 
     private final FindSecondMostCommonService findSecondMostCommonService;
 
-    @Autowired
     public FirstexerciseApplication(FindSecondMostCommonService findSecondMostCommonService) {
         this.findSecondMostCommonService = findSecondMostCommonService;
     }
@@ -21,14 +24,18 @@ public class FirstexerciseApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        int[] vector1 = {0, 1, 2, 5, 7, 4, 2, 9, 1, 2};
-        int[] vector2 = {0, 1, 2, 5, 7, 4, 2, 9, 1};
-        int[] vector3 = {3, 3, 2, 2};
-        int[] vector4 = {3, 3, 3, 3};
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Result 1: " + findSecondMostCommonService.findSecondMostCommon(vector1));
-        System.out.println("Result 2: " + findSecondMostCommonService.findSecondMostCommon(vector2));
-        System.out.println("Result 3: " + findSecondMostCommonService.findSecondMostCommon(vector3));
-        System.out.println("Result 4: " + findSecondMostCommonService.findSecondMostCommon(vector4));
+        log.info("Enter the numbers of the array separated by space:");
+        String input = scanner.nextLine();
+
+        String[] numbers = input.split(" ");
+
+        int[] vector = Arrays.stream(numbers)
+                .mapToInt(Integer::parseInt)
+                .toArray();
+
+        int result = findSecondMostCommonService.findSecondMostCommon(vector);
+        log.info("The second most common number is: " + result);
     }
 }

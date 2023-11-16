@@ -1,18 +1,20 @@
 package com.gustavo.loures.firstexercise;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@SpringBootTest
 class FindSecondMostCommonServiceTests {
-	@Autowired
 	private FindSecondMostCommonService findSecondMostCommonService;
 
+	@BeforeEach
+	void setUp() {
+		findSecondMostCommonService = new FindSecondMostCommonService();
+	}
+
 	@Test
-	public void testFindSecondMostCommonExample1() {
+	void testFindSecondMostCommonExample1() {
 		int[] vetor1 = {0, 1, 2, 5, 7, 4, 2, 9, 1, 2};
 		int expectedResult1 = 1;
 
@@ -21,7 +23,7 @@ class FindSecondMostCommonServiceTests {
 	}
 
 	@Test
-	public void testFindSecondMostCommonExample2() {
+	void testFindSecondMostCommonExample2() {
 		int[] vetor2 = {0, 1, 2, 5, 7, 4, 2, 9, 1};
 		int expectedResult2 = 1;
 
@@ -30,7 +32,7 @@ class FindSecondMostCommonServiceTests {
 	}
 
 	@Test
-	public void testFindSecondMostCommonEmptyArray() {
+	void testFindSecondMostCommonEmptyArray() {
 		int[] emptyArray = {};
 		int expectedResult = -1;
 
@@ -39,7 +41,7 @@ class FindSecondMostCommonServiceTests {
 	}
 
 	@Test
-	public void testFindSecondMostCommonOneElementArray() {
+	void testFindSecondMostCommonOneElementArray() {
 		int[] oneElementArray = {5};
 		int expectedResult = 5;
 
@@ -48,7 +50,7 @@ class FindSecondMostCommonServiceTests {
 	}
 
 	@Test
-	public void testFindSecondMostCommonSameFrequency() {
+	void testFindSecondMostCommonSameFrequency() {
 		int[] sameFrequencyArray = {0, 3, 2, 5, 7, 4, 2, 9, 3, 5, 7, 4};
 		int expectedResult = 2;
 
@@ -57,7 +59,7 @@ class FindSecondMostCommonServiceTests {
 	}
 
 	@Test
-	public void testFindSecondMostCommonAllEqualNumbers() {
+	void testFindSecondMostCommonAllEqualNumbers() {
 		int[] allEqualNumbers = {3, 3, 3, 3, 3};
 		int expectedResult = 3;
 
@@ -66,7 +68,7 @@ class FindSecondMostCommonServiceTests {
 	}
 
 	@Test
-	public void testFindSecondMostCommonNoSecondCommon() {
+	void testFindSecondMostCommonNoSecondCommon() {
 		int[] noSecondCommon = {0, 1, 2, 2, 1, 0};
 		int expectedResult = 0;
 
