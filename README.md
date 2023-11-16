@@ -22,5 +22,5 @@ Commits use the https://gitmoji.dev/ approach.
 
 1. Clone the repository.
 2. Open the project in your preferred IDE.
-3. If you wish, feel free to change the values of the vectors in `FirstexerciseApplication`.
-4. Run the `FirstexerciseApplication` class, which contains the main entry point of the project.
+3. Run the `FirstexerciseApplication` class, which contains the main entry point of the project.
+4. Enter the numbers of the array separated by space in the console.
