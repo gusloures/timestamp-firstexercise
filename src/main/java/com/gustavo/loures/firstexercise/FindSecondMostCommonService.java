@@ -33,11 +33,6 @@ public class FindSecondMostCommonService {
                 .limit(2)
                 .toList();
 
-        //If the second number has equal frequency to the first number, return the first most common number.
-        if (mostCommonEntries.get(0).getValue().equals(mostCommonEntries.get(1).getValue())) {
-            return mostCommonEntries.get(0).getKey();
-        }
-
         // Return the second most common number
         return mostCommonEntries.get(1).getKey();
     }

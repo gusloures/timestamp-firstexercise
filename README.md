@@ -9,8 +9,7 @@ First exercise for Timestamp - Find the Second Most Common
 
 ## Introduction
 
-First exercise for Timestamp to find the second most common number in a vector.
-If there is no number return -1 or if there is only one number or no second number, return that first number most common.
+First exercise for Timestamp to find the second most common number in a vector or if there is no number return -1 or if there is only one number, return that first number most common.
 
 Commits use the https://gitmoji.dev/ approach.
 
