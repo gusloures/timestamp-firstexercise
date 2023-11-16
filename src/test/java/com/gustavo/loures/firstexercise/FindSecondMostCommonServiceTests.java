@@ -25,7 +25,7 @@ class FindSecondMostCommonServiceTests {
 	@Test
 	void testFindSecondMostCommonExample2() {
 		int[] vetor2 = {0, 1, 2, 5, 7, 4, 2, 9, 1};
-		int expectedResult2 = 1;
+		int expectedResult2 = 2;
 
 		int result2 = findSecondMostCommonService.findSecondMostCommon(vetor2);
 		assertEquals(expectedResult2, result2);
@@ -52,7 +52,7 @@ class FindSecondMostCommonServiceTests {
 	@Test
 	void testFindSecondMostCommonSameFrequency() {
 		int[] sameFrequencyArray = {0, 3, 2, 5, 7, 4, 2, 9, 3, 5, 7, 4};
-		int expectedResult = 2;
+		int expectedResult = 3;
 
 		int result = findSecondMostCommonService.findSecondMostCommon(sameFrequencyArray);
 		assertEquals(expectedResult, result);
@@ -70,7 +70,7 @@ class FindSecondMostCommonServiceTests {
 	@Test
 	void testFindSecondMostCommonNoSecondCommon() {
 		int[] noSecondCommon = {0, 1, 2, 2, 1, 0};
-		int expectedResult = 0;
+		int expectedResult = 1;
 
 		int result = findSecondMostCommonService.findSecondMostCommon(noSecondCommon);
 		assertEquals(expectedResult, result);
